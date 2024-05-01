@@ -1,0 +1,31 @@
+ &control
+    calculation = 'scf'
+    restart_mode='from_scratch'
+    prefix='BaTiO3'
+    tstress = .true.
+    tprnfor = .true.
+    outdir = './'
+    pseudo_dir = '/home/hickoxyo/CODE/QE/qe-7.1/pseudo/'
+ /        
+ &system    
+    ibrav=  1, celldm(1) =7.5, nat=  5, ntyp= 3
+    ecutwfc = 110
+ /
+ &electrons
+    diagonalization='david'
+    mixing_mode = 'plain'
+    mixing_beta = 0.7 
+    conv_thr =  1.0d-8
+ /
+ ATOMIC_SPECIES
+  Ba  137.328  ba_pbe_v1.uspp.F.UPF
+  Ti  47.867   ti_pbe_v1.4.uspp.F.UPF
+  O   15.999   o_pbe_v1.2.uspp.F.UPF
+ ATOMIC_POSITIONS
+  Ba 0.00 0.00 0.00 0 0 0
+  Ti 0.50 0.50 0.50 0 0 0
+  O  0.00 0.50 0.50 1 1 1
+  O  0.50 0.00 0.50 1 1 1
+  O  0.50 0.50 0.00 1 1 1                
+ K_POINTS {automatic}
+    4 4 4 1 1 1 

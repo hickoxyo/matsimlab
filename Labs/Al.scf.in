@@ -1,0 +1,31 @@
+ &control
+    calculation = 'scf'
+    restart_mode='from_scratch'
+    prefix='al'
+    tstress = .true.
+    tprnfor = .true.
+    outdir = './'
+    pseudo_dir = '~/SOFTWARE/QE/qe-7.2/pseudo'
+ / 
+       
+ &system    
+    ibrav=  2, celldm(1) = 7.6, nat=  1, ntyp= 1,
+    ecutwfc = 50,
+    ecutrho = 500,
+    occupations= 'smearing',
+    smearing= 'gaussian',
+    degauss = 0.01
+ /
+
+ &electrons
+    conv_thr =  1.0d-8
+ /
+
+ ATOMIC_SPECIES
+  Al 26.981539  Al.pbe-nl-rrkjus_psl.1.0.0.UPF
+
+ ATOMIC_POSITIONS
+  Al 0.00 0.00 0.00 
+                  
+ K_POINTS {automatic}
+    10 10 10 0 0 0 
